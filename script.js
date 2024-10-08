@@ -2,7 +2,110 @@
 If you choose to create your own arrays with elements, just make sure that some
 of the properties make sense to filter on, and some to sort on.*/
 
+
+// script.js
+
+// Predefined array of books with details matching your HTML content
 const books = [
+  { 
+    title: '1984', 
+    author: 'George Orwell', 
+    genre: 'Thriller' 
+  },
+  { 
+    title: 'Harry Potter & the sorcerer stone', 
+    author: 'J.K. Rowling', 
+    genre: 'Adventure' 
+  },
+  { 
+    title: 'Moby Dick', 
+    author: 'Herman Melville', 
+    genre: 'Adventure' 
+  },
+  { 
+    title: 'Pride & prejudice', 
+    author: 'Jane Austen', 
+    genre: 'Romance' 
+  },
+  { 
+    title: 'The chronicles of Narnia', 
+    author: 'C.S. Lewis', 
+    genre: 'Adventure' 
+  },
+  { 
+    title: 'The great Gatsby', 
+    author: 'F. Scott Fitzgerald', 
+    genre: 'Romance' 
+  },
+  { 
+    title: 'The Hobbit', 
+    author: 'J.R.R. Tolkien', 
+    genre: 'Adventure' 
+  },
+  { 
+    title: 'Lord of the rings', 
+    author: 'J.R.R. Tolkien', 
+    genre: 'Adventure' 
+  }
+];
+
+// Function to display books on the page
+function displayBooks(filteredBooks) {
+  const smallBoxNewsItems = document.querySelectorAll('.small-box-news-item');
+
+  smallBoxNewsItems.forEach((item) => {
+      const bookTitle = item.querySelector('h3').textContent.toLowerCase();
+      const bookGenre = item.querySelector('p').textContent.toLowerCase();
+
+      // Check if the book matches the filtered list
+      const isBookIncluded = filteredBooks.some(
+          (book) => book.title.toLowerCase() === bookTitle
+      );
+
+      // Show or hide the book based on the filter
+      item.style.display = isBookIncluded ? 'block' : 'none';
+  });
+}
+
+// Function to filter books based on genre or search query
+function filterBooks(genre) {
+  if (genre === 'All') {
+      displayBooks(books);
+  } else {
+      const filteredBooks = books.filter(book => book.genre.toLowerCase() === genre.toLowerCase());
+      displayBooks(filteredBooks);
+  }
+}
+
+// Function to set up the filter buttons
+function setupFilterButtons() {
+  const filterButtons = document.querySelectorAll('.big-news-btn');
+  filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+          const genre = button.textContent;
+          if (genre === 'Choose random book') {
+              chooseRandomBook();
+          } else {
+              filterBooks(genre);
+          }
+      });
+  });
+}
+
+// Function to choose a random book from the list
+function chooseRandomBook() {
+  const randomIndex = Math.floor(Math.random() * books.length);
+  const randomBook = [books[randomIndex]]; // Wrap in an array for displayBooks function
+  displayBooks(randomBook);
+}
+
+
+// Initialize the page with all books displayed and setup filter buttons
+displayBooks(books);
+setupFilterButtons();
+
+
+/* const books = [
   {
     title: 'The Great Gatsby',
     author: 'F. Scott Fitzgerald',
@@ -183,9 +286,9 @@ const books = [
       'A dystopian novel set in a seemingly perfect society where young Jonas discovers the dark truth beneath the surface.',
     image: './books-images/unknown.jpg'
   }
-]
+] */
 
-const recipes = [
+/* const recipes = [
   {
     name: 'Individual vegetarian lasagnes',
     cuisineType: ['italian'],
@@ -403,4 +506,4 @@ const recipes = [
     url: 'http://www.seriouseats.com/recipes/2012/05/spice-rubbed-grilled-flap-meat-sirloin-tip-recipe.html',
     image: './recipe-images/grilled.jpg'
   }
-]
+] */

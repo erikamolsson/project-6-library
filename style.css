@@ -135,16 +135,7 @@ html {
     background-color: #4c6051;
     font-weight: 600;
   }
-  /* sign up */
-  .flex-div-sign-up {
-    margin: 100px 0;
-    text-align: center;
-  }
-  .sign-up-h2 {
-    color: #1e391e;
-    font-size: 1.9rem;
-    padding-bottom: 15px;
-  }
+
   
   /* footer */
   footer {
