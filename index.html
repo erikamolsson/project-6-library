@@ -42,90 +42,21 @@
         <h1 class="header-news-h1">Project Library</h1>
         <h3 class="header-news-h3">Filter on genre</h3>
         <div class="big-news-btn-flex">
-          <button class="big-news-btn">All</button>
-          <button class="big-news-btn">Adventure</button>
-          <button class="big-news-btn">Romance</button>
-          <button class="big-news-btn">Thriller</button>
-          <button class="big-news-btn random-book-btn">Choose random book</button>
+          <button class="big-news-btn" data-action="all">All</button>
+          <button class="big-news-btn" data-action="fantasy">Fantasy</button>
+          <button class="big-news-btn" data-action="fiction">Fiction</button>
+          <button class="big-news-btn" data-action="science-fiction">Science Fiction</button>
+          <button class="big-news-btn" id="sort-by-year" data-action="sort-year">Sort by year</button>
+          <button class="big-news-btn" id="sort-by-letter" data-action="sort-title">Sort A-Z</button>
+          <button class="big-news-btn random-book-btn" data-action="random">Choose random book</button>
         </div>
       </div>
     </div>
   </section>
 
 
-  <section class="small-box-news">
-    <!-- The other news  -->
-    <article class="small-box-news-item">
-        <img src="./books-images/1984.jpg" class="small-box-news-item-img" alt="Library of books">
-      <div>  
-        <h3>1984</h3>
-        <p>Tags: Thriller</p>
-        <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
-      </div>
-    </article>
-
-    <article class="small-box-news-item">
-      <img src="./books-images/harry-potter-and-the-sorcerer.jpg" class="small-box-news-item-img" alt="Library of books">
-      <div>
-        <h3>Harry Potter & the sorcerer stone</h3>
-        <p>Tags: Adventure</p>
-        <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
-      </div>
-     </article>
-
-     <article class="small-box-news-item">
-        <img src="./books-images/moby-dick.jpg" class="small-box-news-item-img" alt="Library of books">
-        <div>
-          <h3>Moby Dick</h3>
-          <p>Tags: Adventure</p>
-          <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
-        </div>
-      </article>
-
-    <article class="small-box-news-item">
-      <img src="./books-images/pride-and-prejudice.jpg" class="small-box-news-item-img" alt="Library of books">
-      <div>  
-        <h3>Pride & prejudice</h3>
-        <p>Tags: Romance</p>
-        <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
-      </div>
-    </article>
-
-    <article class="small-box-news-item">
-        <img src="./books-images/the-chronicles-of-narnia.jpg" class="small-box-news-item-img" alt="Library of books">
-        <div>
-          <h3>The chronicles of Narnia</h3>
-          <p>Tags: Adventure</p>
-          <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
-        </div>
-    </article>
-
-    <article class="small-box-news-item">
-      <img src="./books-images/the-great-gatsby.jpg" class="small-box-news-item-img" alt="Library of books">
-     <div>
-        <h3>The great Gatsby</h3>
-        <p>Tags: Romance</p>
-        <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
-      </div>
-    </article>
-
-     <article class="small-box-news-item">
-        <img src="./books-images/the-hobbit.jpg" class="small-box-news-item-img" alt="Library of books">
-        <div>
-          <h3>The Hobbit</h3>
-          <p>Tags: Adventure</p>
-          <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
-        </div>
-     </article>
-
-     <article class="small-box-news-item">
-      <img src="./books-images/the-lord-of-the-rings.jpg" class="small-box-news-item-img" alt="Library of books">
-        <div>
-          <h3>Lord of the rings</h3>
-          <p>Tags: Adventure</p>
-          <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
-        </div>
-     </article>
+  <section class="small-box-news" id="book-list">
+   
   </section>
 
 
@@ -141,5 +72,76 @@
 </html>
   
 
+ <!-- The other news  -->
+<!--  <article class="small-box-news-item">
+  <img src="./books-images/1984.jpg" class="small-box-news-item-img" alt="Library of books">
+<div>  
+  <h3>1984</h3>
+  <p>Tags: Thriller</p>
+  <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
+</div>
+</article>
 
+<article class="small-box-news-item">
+<img src="./books-images/harry-potter-and-the-sorcerer.jpg" class="small-box-news-item-img" alt="Library of books">
+<div>
+  <h3>Harry Potter & the sorcerer stone</h3>
+  <p>Tags: Adventure</p>
+  <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
+</div>
+</article>
+
+<article class="small-box-news-item">
+  <img src="./books-images/moby-dick.jpg" class="small-box-news-item-img" alt="Library of books">
+  <div>
+    <h3>Moby Dick</h3>
+    <p>Tags: Adventure</p>
+    <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
+  </div>
+</article>
+
+<article class="small-box-news-item">
+<img src="./books-images/pride-and-prejudice.jpg" class="small-box-news-item-img" alt="Library of books">
+<div>  
+  <h3>Pride & prejudice</h3>
+  <p>Tags: Romance</p>
+  <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
+</div>
+</article>
+
+<article class="small-box-news-item">
+  <img src="./books-images/the-chronicles-of-narnia.jpg" class="small-box-news-item-img" alt="Library of books">
+  <div>
+    <h3>The chronicles of Narnia</h3>
+    <p>Tags: Adventure</p>
+    <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
+  </div>
+</article>
+
+<article class="small-box-news-item">
+<img src="./books-images/the-great-gatsby.jpg" class="small-box-news-item-img" alt="Library of books">
+<div>
+  <h3>The great Gatsby</h3>
+  <p>Tags: Romance</p>
+  <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
+</div>
+</article>
+
+<article class="small-box-news-item">
+  <img src="./books-images/the-hobbit.jpg" class="small-box-news-item-img" alt="Library of books">
+  <div>
+    <h3>The Hobbit</h3>
+    <p>Tags: Adventure</p>
+    <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
+  </div>
+</article>
+
+<article class="small-box-news-item">
+<img src="./books-images/the-lord-of-the-rings.jpg" class="small-box-news-item-img" alt="Library of books">
+  <div>
+    <h3>Lord of the rings</h3>
+    <p>Tags: Adventure</p>
+    <a href="#" target="_blank"><button class="small-news-btn">Read more</button></a>
+  </div>
+</article> -->
 
